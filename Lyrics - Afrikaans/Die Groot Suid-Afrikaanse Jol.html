@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Groot Suid-Afrikaanse Jol</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            font-family: Arial, sans-serif;
+            color: #FFD700; /* Gold */
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: left;
+        }
+
+        /* Song Name Heading - 25px */
+        h1 {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0 0 21px 0; /* Exactly 1 line space (21px) below the header */
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        /* Spacing between blocks matched to 21px */
+        .lyric-block {
+            margin-bottom: 21px;
+        }
+
+        /* Main Context Font Size - 21px */
+        .afrikaans {
+            font-size: 21px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .version {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="version">v14</div>
+
+    <div class="container">
+        <header>
+            <h1>Die Groot Suid-Afrikaanse Jol</h1>
+        </header>
+
+        <main id="lyricsDisplay">
+            <!-- Lyrics injected via JavaScript -->
+        </main>
+    </div>
+
+    <script>
+        const lyrics = [
+            "Howzit my bru, dit is tyd vir 'n goeie ou kuier",
+            "Jislaaikit, die son sak reeds laag oor die Bosveld en die Srosveld",
+            "Die outoppie sit by the windpomp in die droë Karoo",
+            "Hy drink sy Rooibos terwyl die laaitie op die springkasteel 'n bollemakiesie gooi",
+            "Skat, kry die braaivleis, die boerewors en die biltong reg",
+            "Moenie vergeet van die braaibroodjies op die braai nie",
+            "Boet, gooi nog 'n brannas, ek is moeg vir die bislapad en die plasspad",
+            "Ons ry verby die garagepie want die petrol is vrot en die pad is deurmekaar",
+            "Ai, die ou Van der Merwe is weer hardegat en die voorbok van die dorp",
+            "Hayibo, hy is gatvol vir die dinge wat altyd misluk",
+            "Aikona, sê hy, terwyl hy 'n bunnychow eet in die middel van Namakwaland",
+            "Is zit? vra die bokkie met die snort & trane op haar wange",
+            "Ag shame, sy het haar voet teen 'n klip gestamp en skree \"Eina!\"",
+            "'n Gogga en 'n hottentotsgot kruip suutjiespoeop deur the gras",
+            "Daar is 'n mengelmoes van mense by die jol, dis lekker man",
+            "Die potjiekos prut in die dotjiakleis, dit ruik na 'n prony how wenner",
+            "Moenie so dof wees nie, sommer net vasbyt en aanhou loop",
+            "Iemand raak lafvol en begin soos 'n loslappie dans",
+            "Môreoggend het ons almal 'n babelaas en dronkverdriet",
+            "Bliksem, dit was 'n lang pad van die Senqu rivier af",
+            "Voetsek! skree die buurman vir die hond, maar ons hou net aan sing",
+            "Dis mos hoe ons dit doen, van die Kaap tot in die verste noorde"
+        ];
+
+        function init() {
+            const main = document.getElementById('lyricsDisplay');
+            lyrics.forEach(text => {
+                const block = document.createElement('div');
+                block.className = 'lyric-block';
+                
+                const afLine = document.createElement('span');
+                afLine.className = 'afrikaans';
+                afLine.textContent = text;
+                
+                block.appendChild(afLine);
+                main.appendChild(block);
+            });
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
